@@ -1,6 +1,6 @@
 # monty_hall
 
-A python script that tests the monty holl paradox.
+A python script that tests the monty hall paradox.
 
 Each function gets an array of 3 integers (representing the 3 doors in the monty holl paradox).
 Each of them chooses an element. Then, an element with the value 0 is revealed.
