@@ -1,4 +1,4 @@
-# monty_holl
+# monty_hall
 
 A python script that tests the monty holl paradox.
 
