@@ -10,12 +10,12 @@ def revealAfterChoice(doors, choice):
         if i is not choice and doors[i] is 0:
             return i
 
-def nonSwopper(doors):
+def nonSwitcher(doors):
     choice = random.randint(0,2)
     revealed = revealAfterChoice(doors, choice)
     return choice
 
-def swopper(doors):
+def switcher(doors):
     choice = random.randint(0,2)
     revealed = revealAfterChoice(doors, choice)
     for i in range(len(doors)):
@@ -24,39 +24,39 @@ def swopper(doors):
             break
     return choice
 
-def playNonSwoper():
+def playNonSwitcher():
     doors = getThreeDoors()
-    choice = nonSwopper(doors)
+    choice = nonSwitcher(doors)
     if doors[choice] is 1:
         return True
     else:
         return False
 
-def playSwoper():
+def playSwitcher():
     doors = getThreeDoors()
-    choice = swopper(doors)
+    choice = switcher(doors)
     if doors[choice] is 1:
         return True
     else:
         return False
 
 
-def testNonSwopper(rounds):
+def testNonSwitcher(rounds):
     wins = 0
     for i in range(rounds):
-        didIWin = playNonSwoper()
+        didIWin = playNonSwitcher()
         if didIWin:
             wins += 1
-    return "NonSwopper: " + str(wins) + " wins out of " + str(rounds) + " rounds."
+    return "Non Switcher: " + str(wins) + " wins out of " + str(rounds) + " rounds."
 
-def testSwopper(rounds):
+def testSwitcher(rounds):
     wins = 0
     for i in range(rounds):
-        didIWin = playSwoper()
+        didIWin = playSwitcher()
         if didIWin:
             wins += 1
-    return "Swopper: " + str(wins) + " wins out of " + str(rounds) + " rounds."
+    return "Switcher: " + str(wins) + " wins out of " + str(rounds) + " rounds."
 
 rounds = 100000
-print(testNonSwopper(rounds))
-print(testSwopper(rounds))
+print(testNonSwitcher(rounds))
+print(testSwitcher(rounds))
